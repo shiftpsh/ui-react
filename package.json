@@ -1,6 +1,6 @@
 {
   "name": "@solved-ac/ui-react",
-  "version": "0.7.0",
+  "version": "0.8.0",
   "description": "React component library used by solved.ac",
   "author": "shiftpsh",
   "license": "MIT",
