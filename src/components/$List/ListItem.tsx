@@ -1,6 +1,6 @@
 import { css, useTheme } from '@emotion/react'
 import styled from '@emotion/styled'
-import React, { ElementType } from 'react'
+import React, { ElementType, PropsWithChildren } from 'react'
 import { PC, PP, PR } from '../../types/PolymorphicElementProps'
 import { computeHoverColor, readableColor } from '../../utils/color'
 import { forwardRefWithGenerics } from '../../utils/ref'
@@ -56,7 +56,7 @@ const ListItemContainer = styled.div<ListItemContainerProps>`
   ${({ padding }) => paddingMap[padding]}
 `
 
-export interface ListItemProps {
+export interface ListItemProps extends PropsWithChildren {
   backgroundColor?: string
   hoverColor?: string
   clickable?: boolean

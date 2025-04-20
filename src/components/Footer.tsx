@@ -1,5 +1,5 @@
 import styled from '@emotion/styled'
-import React, { ElementType } from 'react'
+import React, { ElementType, PropsWithChildren } from 'react'
 import { PC, PP, PR } from '../types/PolymorphicElementProps'
 import { forwardRefWithGenerics } from '../utils/ref'
 import { cssVariables } from '../utils/styles'
@@ -30,7 +30,7 @@ const FooterContainer = styled.nav<FooterContainerProps>`
   font-size: small;
 `
 
-export interface FooterProps {
+export interface FooterProps extends PropsWithChildren {
   backgroundColor?: string
   padding?: 'none' | 'normal' | 'wide'
 }

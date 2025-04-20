@@ -1,5 +1,5 @@
 import styled from '@emotion/styled'
-import React, { ElementType } from 'react'
+import React, { ElementType, PropsWithChildren } from 'react'
 import { PC, PP, PR } from '../types/PolymorphicElementProps'
 import { forwardRefWithGenerics } from '../utils/ref'
 import { cssVariables } from '../utils/styles'
@@ -30,7 +30,7 @@ const ContainerContainer = styled.nav<ContainerContainerProps>`
   margin: 0 auto;
 `
 
-export interface ContainerProps {
+export interface ContainerProps extends PropsWithChildren {
   w?: string | number
   padding?: 'none' | 'normal' | 'wide'
   topBarPadding?: boolean

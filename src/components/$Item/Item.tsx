@@ -1,5 +1,5 @@
 import styled from '@emotion/styled'
-import React, { ElementType, useContext } from 'react'
+import React, { ElementType, PropsWithChildren, useContext } from 'react'
 import { PC, PP, PR } from '../../types/PolymorphicElementProps'
 import { forwardRefWithGenerics } from '../../utils/ref'
 import { ItemizeContext } from './ItemizeContext'
@@ -17,7 +17,7 @@ const ItemContainer = styled.li<ItemContainerProps>`
   }
 `
 
-export interface ItemProps {
+export interface ItemProps extends PropsWithChildren {
   marker?: string
 }
 

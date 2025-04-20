@@ -1,5 +1,5 @@
 import styled from '@emotion/styled'
-import React, { ElementType, useContext } from 'react'
+import React, { ElementType, PropsWithChildren, useContext } from 'react'
 import { PC, PP, PR } from '../../types/PolymorphicElementProps'
 import { forwardRefWithGenerics } from '../../utils/ref'
 import { TableContext } from './TableContext'
@@ -26,7 +26,7 @@ const TableHeadContainer = styled.thead<TableHeadContainerProps>`
     `position: sticky; top: ${getStickyValue(sticky)};`}
 `
 
-export interface TableHeadProps {
+export interface TableHeadProps extends PropsWithChildren {
   sticky?: boolean | number | string
   verticalAlign?: 'top' | 'middle' | 'bottom'
 }

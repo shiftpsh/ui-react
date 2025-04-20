@@ -1,7 +1,7 @@
 import { useTheme } from '@emotion/react'
 import styled from '@emotion/styled'
 import { transparentize } from 'polished'
-import React, { ElementType } from 'react'
+import React, { ElementType, PropsWithChildren } from 'react'
 import { PC, PP, PR } from '../types/PolymorphicElementProps'
 import { computeHoverColor, readableColor } from '../utils/color'
 import { forwardRefWithGenerics } from '../utils/ref'
@@ -64,7 +64,7 @@ const ButtonContainer = styled.button<ButtonContainerProps>`
   }
 `
 
-export interface ButtonProps {
+export interface ButtonProps extends PropsWithChildren {
   backgroundColor?: string
   hoverColor?: string
   primary?: boolean

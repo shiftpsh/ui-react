@@ -22,12 +22,13 @@ import { AnimatePresence, motion } from 'framer-motion'
 import { ellipsis } from 'polished'
 import React, {
   ElementType,
+  PropsWithChildren,
   ReactNode,
   useEffect,
   useImperativeHandle,
   useLayoutEffect,
   useRef,
-  useState
+  useState,
 } from 'react'
 import { PP, PR } from '../types/PolymorphicElementProps'
 import { Timeout } from '../types/Timeout'
@@ -86,7 +87,8 @@ const SelectInputAdornment = styled(Centering)`
 
 type SelectItemNode = string | { value: string }
 
-export interface SelectProps<T extends SelectItemNode> {
+export interface SelectProps<T extends SelectItemNode>
+  extends PropsWithChildren {
   fullWidth?: boolean
   disableEllipsis?: boolean
   items?: T[]
