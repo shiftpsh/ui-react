@@ -18,10 +18,11 @@ import { AnimatePresence, motion } from 'framer-motion'
 import { transparentize } from 'polished'
 import React, {
   CSSProperties,
+  PropsWithChildren,
   ReactNode,
+  useMemo,
   useRef,
   useState,
-  useMemo,
 } from 'react'
 import { SolvedTheme, solvedThemes } from '../styles'
 import { Card, CardProps } from './Card'
@@ -88,7 +89,8 @@ export type TooltipProps = {
   | (CardProps & {
       noDefaultStyles?: true
     })
-)
+) &
+  PropsWithChildren
 
 const resolveArrowStyles = (
   arrowX: number | undefined | null,

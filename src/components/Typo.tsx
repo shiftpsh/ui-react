@@ -1,7 +1,7 @@
 import { css } from '@emotion/react'
 import styled from '@emotion/styled'
 import { ellipsis } from 'polished'
-import React, { ElementType } from 'react'
+import React, { ElementType, PropsWithChildren } from 'react'
 import { SolvedTheme, solvedThemes } from '../styles'
 import { PC, PP, PR } from '../types/PolymorphicElementProps'
 import { forwardRefWithGenerics } from '../utils/ref'
@@ -120,7 +120,7 @@ type OptionalVariables = {
 }
 export type TypoVariant = keyof VariantsObject
 
-const asMap = {
+const asMap: Partial<Record<TypoVariant, ElementType>> = {
   h1: 'h1',
   h2: 'h2',
   h3: 'h3',
@@ -141,7 +141,8 @@ const TypoContainer = styled.span<TypoContainerProps>`
 
 export type TypoProps = {
   variant?: TypoVariant | TypoVariant[]
-} & Partial<OptionalVariables>
+} & Partial<OptionalVariables> &
+  PropsWithChildren
 
 const firstVariant = (variant?: TypoVariant[]): TypoVariant | undefined => {
   if (typeof variant === 'string') return variant

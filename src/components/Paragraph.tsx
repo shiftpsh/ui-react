@@ -1,5 +1,5 @@
 import styled from '@emotion/styled'
-import React, { ElementType } from 'react'
+import React, { ElementType, PropsWithChildren } from 'react'
 import { PC, PP, PR } from '../types/PolymorphicElementProps'
 import { forwardRefWithGenerics } from '../utils/ref'
 
@@ -20,7 +20,7 @@ const ParagraphContainer = styled.p<ParagraphContainerProps>`
   margin-inline-end: 0;
 `
 
-export interface ParagraphProps {
+export interface ParagraphProps extends PropsWithChildren {
   margin?: 'none' | 'normal' | 'wide'
 }
 

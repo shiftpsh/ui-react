@@ -1,7 +1,7 @@
 import { css, useTheme } from '@emotion/react'
 import styled from '@emotion/styled'
 import { ellipsis } from 'polished'
-import React, { ElementType } from 'react'
+import React, { ElementType, PropsWithChildren } from 'react'
 import { PC, PP, PR } from '../../types/PolymorphicElementProps'
 import { computeHoverColor, readableColor } from '../../utils/color'
 import { forwardRefWithGenerics } from '../../utils/ref'
@@ -56,7 +56,7 @@ const TabContainer = styled.button<TabContainerProps>`
   ${({ current }) => current && whenCurrent}
 `
 
-export interface TabProps {
+export interface TabProps extends PropsWithChildren {
   current?: boolean
   disabled?: boolean
   backgroundColor?: string

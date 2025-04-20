@@ -1,5 +1,11 @@
 import styled from '@emotion/styled'
-import React, { ElementType, useLayoutEffect, useRef, useState } from 'react'
+import React, {
+  ElementType,
+  PropsWithChildren,
+  useLayoutEffect,
+  useRef,
+  useState,
+} from 'react'
 import { PC, PP, PR } from '../types/PolymorphicElementProps'
 import { forwardRefWithGenerics } from '../utils/ref'
 
@@ -18,7 +24,7 @@ const CollapseContainer = styled.div<CollapseContainerProps>`
   overflow: 'hidden';
 `
 
-export interface CollapseProps {
+export interface CollapseProps extends PropsWithChildren {
   shown: boolean
 }
 

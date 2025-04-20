@@ -1,5 +1,10 @@
 import styled from '@emotion/styled'
-import React, { ElementType, useEffect, useState } from 'react'
+import React, {
+  ElementType,
+  PropsWithChildren,
+  useEffect,
+  useState,
+} from 'react'
 import { PP, PR } from '../../types/PolymorphicElementProps'
 import { forwardRefWithGenerics } from '../../utils/ref'
 import { DateSelectContext } from './DateSelectContext'
@@ -33,7 +38,7 @@ export type DateSelectProps = DateSelectValues & {
   weekStartsOn?: 0 | 1 | 2 | 3 | 4 | 5 | 6
   locale?: string
   chunks?: number
-}
+} & PropsWithChildren
 
 export type DateSelectMode = 'year' | 'month' | 'date'
 export type CursorMode = 'select' | 'selectStart' | 'selectEnd'

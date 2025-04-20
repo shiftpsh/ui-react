@@ -1,5 +1,5 @@
 import styled from '@emotion/styled'
-import React, { ElementType } from 'react'
+import React, { ElementType, PropsWithChildren } from 'react'
 import { PC, PP, PR } from '../types/PolymorphicElementProps'
 import { forwardRefWithGenerics } from '../utils/ref'
 import { cssCentering } from '../utils/styles'
@@ -24,7 +24,7 @@ const EmptyStatePlaceholderContainer = styled.div<EmptyStatePlaceholderContainer
   text-align: center;
 `
 
-export interface EmptyStatePlaceholderProps {
+export interface EmptyStatePlaceholderProps extends PropsWithChildren {
   padding?: 'none' | 'normal' | 'wide'
 }
 

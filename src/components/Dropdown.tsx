@@ -1,7 +1,7 @@
-import React from 'react'
+import React, { PropsWithChildren } from 'react'
 import { Tooltip, TooltipProps } from './Tooltip'
 
-export type DropdownProps = TooltipProps
+export type DropdownProps = TooltipProps & PropsWithChildren
 
 export const Dropdown: React.FC<TooltipProps> = (props) => {
   const {
